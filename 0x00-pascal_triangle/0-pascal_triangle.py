@@ -1,14 +1,24 @@
-from math import factorial
+#!/usr/bin/python3
+"""
+A script that returns the coeeficients of Pascal's triangle
+"""
 
 
 def pascal_triangle(n):
-    """A function that computes Pascal's triangle coefficients."""
+    """Returns a list of integers representing Pascal's triangle
+    of size n"""
     triangle = []
+
     if n <= 0:
         return triangle
 
     for i in range(n):
-        row = [factorial(i)//(factorial(j)*factorial(i-j)) for j in range(i+1)]
-        triangle.append(row)
+        temp_list = []
 
+        for j in range(i+1):
+            if j == 0 or j == i:
+                temp_list.append(1)
+            else:
+                temp_list.append(triangle[i-1][j-1] + triangle[i-1][j])
+        triangle.append(temp_list)
     return triangle
