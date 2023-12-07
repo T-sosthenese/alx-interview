@@ -6,6 +6,7 @@ can unlock other boxes.
     boxes -> The number of boxes to be unlocked.
 """
 
+
 def canUnlockAll(boxes):
     """
     A function that unlocks other bockes
