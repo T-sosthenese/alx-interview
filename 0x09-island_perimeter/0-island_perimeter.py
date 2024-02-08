@@ -7,6 +7,8 @@ A module that computes the perimeter of an island
 def island_perimeter(grid):
     """Returns the perimeter of the island
     """
+    if not grid:
+        return 0
     rows = len(grid)
     columns = len(grid[0])
     perimeter = 0
